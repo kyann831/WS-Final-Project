@@ -4,6 +4,8 @@ import { Nav, Navbar } from "react-bootstrap";
 function Navigation() {
   return (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Navbar bg="dark" variant="dark">
+  </Navbar>
     <Navbar.Brand href="#home">Walk Safe</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">

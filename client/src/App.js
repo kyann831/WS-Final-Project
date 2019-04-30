@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Navigation from "./components/Navigation";
 import Jumbotron from "./components/Jumbotron";
+import Login from "./containers/Login";
+
+
 
 
 
@@ -10,6 +13,7 @@ class App extends Component {
       <div>
       <Navigation />
       <Jumbotron/>
+      <Login/>
        
       </div>
     );
