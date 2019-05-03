@@ -36,13 +36,13 @@ class Dashboard extends Component {
                 <span style={{ fontFamily: "monospace" }}>Walk Safe</span>👏
               </p>
             </h4>
-            <Card content="Strength Exercise" action="Link 1" />
-            <Card content="Walk Safe Test" action="Link 2" />
-            <Card content="Home Mods" action="Link 3" />
+            <Card content="Strength Exercise" action="Here" href="/strength" />
+            <Card content="Walk Safe Test" action="Here" href="/test"/>
+            <Card content="Home Mods" action="Here" href="/homemod" />
             <br></br>
-            <Card content="Flexibility Exercises" action="Link 4" />
-            <Card content="Track your results" action="Link 5" />
-            <Card content="Home Safety" action="Link 6" />
+            <Card content="Flexibility Exercises" action="flexibility" href="/flexibility" />
+            <Card content="Track your results" action="tracking" href="/tracking" />
+            <Card content="Home Safety" action="safety" href="/safety"/>
 
           </div>
         </div>
@@ -62,7 +62,7 @@ render() {
         <div className="card-content" style={{ padding:'10px', margin: '10px 0' }}> {this.props.content}
         </div>
         <div className="card-action">
-          <a href="/">{this.props.action}</a>
+          <a href={this.props.href}>{this.props.action}</a>
         </div>
       </div>
     </div>

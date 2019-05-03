@@ -12,6 +12,13 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Videolibrary from "./components/layout/VideoLibrary";
+import Test from "./components/layout/Test";
+import Tracking from "./components/layout/Tracking";
+import HomeMod from "./components/layout/HomeMod";
+import Safety from "./components/layout/Safety";
+import Strength from "./components/layout/Strength";
+import Flexibility from "./components/layout/Flexibility";
+
 
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -48,6 +55,18 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/videolibrary" component={Videolibrary} />
+            <Route exact path="/test" component={Test} />
+            <Route exact path="/tracking" component={Tracking} />
+            <Route exact path="/homemod" component={HomeMod} />
+            <Route exact path="/safety" component={Safety} />
+            <Route exact path="/strength" component={Strength} />
+            <Route exact path="/flexibility" component={Flexibility} />
+
+
+
+
+
+
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
