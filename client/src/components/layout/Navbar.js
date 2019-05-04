@@ -4,34 +4,35 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <div className="navbar-fixed">
+      <div className="navbar-fixed"> 
         <nav className="z-depth-0">
           <div className="nav-wrapper blue accent 3">
             <Link
               to="/"
               style={{
                 fontFamily: "monospace",
-                paddingLeft: 20
-                
+                marginLeft: 20
                 
               }}
-              className="col s5 brand-logo left black-text" 
+              className="col s5 brand-logo black-text" 
             >
-              <i className="material-icons">directions_walk</i>
               Walk Safe
+              <i className="material-icons">directions_walk</i>
+
             </Link>
-            {/* <Link
-              to="/videolibrary"
+            <Link
+              to="/about"
               style={{
                 fontFamily: "monospace",
-                paddingRight: 20
+                paddingLeft: 20,
+                marginLeft: 240
 
                 
               }}
-              className="col s5 brand-logo left black-text right" 
+              className="col s5 brand-logo black-text" 
             >
-              Safety
-            </Link> */}
+              About
+            </Link>
             <Link
               to="/videolibrary"
               style={{

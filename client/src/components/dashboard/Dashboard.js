@@ -36,13 +36,13 @@ class Dashboard extends Component {
                 <span style={{ fontFamily: "monospace" }}>Walk Safe</span>👏
               </p>
             </h4>
-            <Card content="Strength Exercise" action="Here" href="/strength" />
-            <Card content="Walk Safe Test" action="Here" href="/test"/>
-            <Card content="Home Mods" action="Here" href="/homemod" />
+            <Card content="Strength Exercise" action="Learn More" href="/strength" />
+            <Card content="Walk Safe Test" action="Test Now" href="/test"/>
+            <Card content="Home Mods" action="Learn More" href="/homemod" />
             <br></br>
-            <Card content="Flexibility Exercises" action="flexibility" href="/flexibility" />
-            <Card content="Track your results" action="tracking" href="/tracking" />
-            <Card content="Home Safety" action="safety" href="/safety"/>
+            <Card content="Flexibility Exercises" action="Learn More" href="/flexibility" />
+            <Card content="Track your results" action="Tracking" href="/tracking" />
+            <Card content="Home Safety" action="Learn More" href="/safety"/>
 
           </div>
         </div>

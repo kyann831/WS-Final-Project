@@ -18,6 +18,8 @@ import HomeMod from "./components/layout/HomeMod";
 import Safety from "./components/layout/Safety";
 import Strength from "./components/layout/Strength";
 import Flexibility from "./components/layout/Flexibility";
+import Results from "./components/layout/Results";
+
 
 
 import PrivateRoute from "./components/private-route/PrivateRoute";
@@ -61,6 +63,8 @@ class App extends Component {
             <Route exact path="/safety" component={Safety} />
             <Route exact path="/strength" component={Strength} />
             <Route exact path="/flexibility" component={Flexibility} />
+            <Route exact path="/results" component={Results} />
+
 
 
 

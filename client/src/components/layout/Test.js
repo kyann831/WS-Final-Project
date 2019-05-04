@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 
-class Quiz extends React.Component {
+
+class Quiz extends Component {
     constructor(props) {
       super(props)
       
@@ -89,6 +91,14 @@ class Quiz extends React.Component {
               ],
               correct: 0
             },
+            {
+              question: "Your total score is as above. Click below to understand test results.",
+              answers: [
+                "Yes",
+                "No",
+              ],
+              correct: 0
+            },
       ];
       
       this.state = {current:0, dataSet:dataSet, correct:0, incorrect:0}
@@ -102,12 +112,18 @@ class Quiz extends React.Component {
       } else {
         this.setState({incorrect: this.state.incorrect + 1})
       }
+
+      if(this.state.current === 9) {
+        alert("Click yes to test again.");
+       
+      }
       
-      if (this.state.current === 9) {
+      if (this.state.current === 10) {
         this.setState({current: 0})
         this.setState({incorrect: 0})
         this.setState({correct: 0})
-      } else {
+      } 
+      else {
            this.setState({current: this.state.current + 1}) 
       }
     }
@@ -116,7 +132,11 @@ class Quiz extends React.Component {
       return(
         <div>
           <ScoreArea correct={this.state.correct} incorrect={this.state.incorrect} />
-          <QuizArea handleClick={this.handleClick} dataSet={this.state.dataSet[this.state.current]} />
+          <QuizArea 
+            handleClick={this.handleClick} 
+            dataSet={this.state.dataSet[this.state.current]}
+            finished={this.state.current === 10} 
+          />
         </div>
       )
     }
@@ -135,7 +155,8 @@ class Quiz extends React.Component {
     var style = {
       width: "100%",
       height: 50,
-      color: "blue"
+      color: "blue",
+      backgroundColor: "white"
     }
     return(
       <div>
@@ -162,16 +183,40 @@ class Quiz extends React.Component {
       display: "block",
       textAlign: "center",
       boxSizing: "border-box",
+      border: "1px solid black",
       justifyContent: "center",
       margin: "0 auto",
-
     }
+            
     return(
       <div style={style}>
         <Question dataSet={props.dataSet} />
         <AnswerList dataSet={props.dataSet} handleClick={props.handleClick} />
+        <RenderLink finished={props.finished} />
       </div>
     )
+  }
+
+  function RenderLink(props) {
+    if (props.finished) {
+      return (
+        <div className="col s6">
+        <Link to="/results"
+          style={{
+            width: "400px",
+            borderRadius: "3px",
+            color: "black",
+            letterSpacing: "1.5px"
+          }}
+          className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+        >
+          I want to understand my result
+        </Link>
+      </div>
+      )
+    } else {
+      return null
+    }
   }
   
   function TotalCorrect(props) {
@@ -182,7 +227,7 @@ class Quiz extends React.Component {
       margin: "0 1em 0 0"
     }
     return(
-      <h4 style={style}>Total: {props.correct}</h4>
+      <h4 style={style}>My Score: {props.correct}</h4>
     )
   }
   
