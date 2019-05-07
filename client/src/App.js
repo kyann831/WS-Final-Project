@@ -19,6 +19,7 @@ import Safety from "./components/layout/Safety";
 import Strength from "./components/layout/Strength";
 import Flexibility from "./components/layout/Flexibility";
 import Results from "./components/layout/Results";
+import About from "./components/layout/About";
 
 
 
@@ -64,6 +65,8 @@ class App extends Component {
             <Route exact path="/strength" component={Strength} />
             <Route exact path="/flexibility" component={Flexibility} />
             <Route exact path="/results" component={Results} />
+            <Route exact path="/about" component={About} />
+
 
 
 

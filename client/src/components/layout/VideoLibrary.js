@@ -5,7 +5,15 @@ import { Carousel } from 'react-responsive-carousel';
 class DemoCarousel extends Component {
     render() {
         return (
-          <div id="carousel-container">
+          <div id="ad-library">
+          <p style={{width: "65%",
+      display: "block",
+      textAlign: "center",
+      // boxSizing: "border-box",
+      // border: "1px solid black",
+      justifyContent: "center",
+      margin: "0 auto", marginBottom: "20"}}><h5> Watch videos to know what devices can help you Walk Safe! Below are videos showing common devices to make walking safe.</h5></p>
+          <div id="carousel-container"  style={{marginTop: 20}}>
             <Carousel>
               <div>
                 {/* <video src="https://www.youtube.com/embed/YCGPX8URA-Q" style={{ width:"640px",height:"480px" }} controls></video> */}
@@ -45,6 +53,8 @@ class DemoCarousel extends Component {
               </div>
             </Carousel>
           </div>
+          </div>
+
         );
     }
 }

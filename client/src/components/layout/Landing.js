@@ -1,12 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+// import { Card } from "react-materialize";
 
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div className="row">
+    <div className="col s12 m7">
+      <div className="card">
+        <div className="card-image"> <img src={this.props.image} alt=""></img></div>
+
+
+          <span class="card-title"></span>
+        
+        <div class="card-content">{this.props.content}
+        </div>
+        <div class="card-action">
+          <a href={this.props.href}>{this.props.action}</a>
+       
+  
+      <div style={{ height: "75vh"}} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
+
             <h4>
             Take the test. Watch the videos. Track your results. {" "}
               <span style={{ fontFamily: "monospace" }}></span> 
@@ -40,14 +56,20 @@ class Landing extends Component {
               >
                 Log In
               </Link>
-
-
+              </div>
+      </div>
+    </div>
+  </div>
+  
             </div>
           </div>
         </div>
+        
       </div>
+      
     );
   }
 }
+
 
 export default Landing;
