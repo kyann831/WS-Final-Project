@@ -9,47 +9,71 @@ import Paper from '@material-ui/core/Paper';
 import { Dropdown, Button} from "react-materialize";
 import React, { Component } from "react";
 
+class DropContainer extends Component {
+    state = {
+        testscore: "",
+        corefive: "",
+        otherexercise: ""
+      };
 
+      handleInputChange = event => {
+        console.log(this.state);
+        const { name, text } = event.target;
+        console.log('target: %o', event.target);
+        console.log("name: %s, value: %s", name, text);
+        this.setState({
+          [name]: text
+        });
+      };
+
+    render() {
+        return(
+            <div><div className="col s4 .left-align"><Drop handleChange={this.handleInputChange} name="testscore" text="Log Test Score" text1="1" text2="2" text3="3" text4="4" text5="5" text6="6" text7="7" text8="8" text9="9" text10="10" /> </div>  
+    <div className="col s4 .center-align"> <Drop handleChange={this.handleInputChange} name="corefive" text="I did the Core 5" text1="Yes" text2="No"  /></div>
+    <div className="col s4 .right-align"> <Drop handleChange={this.handleInputChange} name="otherexercise" text="I did 2 other Exercise" text1="Yes" text2="No"  /></div>
+    </div>
+        )
+    }
+}
 class Drop extends Component {
     render() {
         return(
 <div className="div1" style={{marginTop: "50px", marginBottom: "50px", marginLeft: "120px"}}>
 
 <Dropdown trigger={<Button>{this.props.text}</Button>}>
-<a href={this.props.href}>
-{this.props.text1.trim()}
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
+{this.props.text1}
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text2}
-
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text3}
 
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text4}
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text5}
 
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text6}
 
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text7}
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text8}
 
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text9}
 
 </a>
-<a href={this.props.href}>
+<a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text10}
 
 </a>
@@ -96,12 +120,9 @@ function SimpleTable(props) {
   const { classes } = props;
 
   return (
-<div class="row">
-    
-  <div class="col s4 .left-align"><Drop text="Log Test Score" text1="1" text2="2" text3="3" text4="4" text5="5" text6="6" text7="7" text8="8" text9="9" text10="10" /> </div>  
-    <div class="col s4 .center-align"> <Drop text="I did the Core 5" text1="Yes" text2="No"  /></div>
-    <div class="col s4 .right-align"> <Drop text="I did 2 other Exercise" text1="Yes" text2="No"  /></div>
 
+<div className="row">    
+  <DropContainer />
     <div className="datatable" style={{marginTop: "100", marginBottom: "100"}}>
     <Paper className={classes.root}>
       <Table className={classes.table}>
@@ -124,7 +145,7 @@ function SimpleTable(props) {
           {rows.map(row => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.Weekly}
               </TableCell>
               <TableCell align="right">{row.Monday}</TableCell>
               <TableCell align="right">{row.Tuesday}</TableCell>

@@ -15,4 +15,10 @@ app.get("/results", function(req, res) {
 app.get("/tracking", function(req, res) {
                 res.render("./tracking");
                 });
+
+// app.get("/tracking", function(req, res) {
+//     db.Userdata.findAll({}).then() {
+//         res.render("./tracking")
+//     }
+// })
 }
