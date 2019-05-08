@@ -35,6 +35,17 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+// app.use(Express.static(path.join(__dirname, '../public')));
+
+// handle every other route with index.html, which will contain
+// a script tag to your application's JavaScript file(s).
+app.get('*', function (request, response){
+   response.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+})
 // Routes
 app.use("/api/users", users);
 
