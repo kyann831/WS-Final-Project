@@ -21,13 +21,21 @@ app.use(bodyParser.json());
 const db = 'mongodb://localhost/mern_authenticate_me';
 
 // Connect to MongoDB
-mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
+// mongoose
+//   .connect(
+//     db,
+//     { useNewUrlParser: true }
+//   )
+//   .then(() => console.log("MongoDB successfully connected"))
+//   .catch(err => console.log(err));
+
+  mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://password1@ds153566.mlab.com:53566/heroku_8pq8xsmq",
+    {
+      useCreateIndex: true,
+      useNewUrlParser: true
+    }
+  );
 
 // Passport middleware
 app.use(passport.initialize());
