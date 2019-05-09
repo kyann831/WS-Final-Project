@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
 
@@ -8,42 +8,34 @@ const users = require("./routes/api/users");
 
 const app = express();
 
-const cors = require('cors');
-app.use(cors());
+// const cors = require('cors');
+// app.use(cors());
 
 // Bodyparser middleware
 app.use(
-  express.urlencoded({
-    extended: true
+  bodyParser.urlencoded({
+    extended: false
   })
 );
-app.use(express.json());
+app.use(bodyParser.json());
 
 // DB Config
 // const db = require("./config/keys").mongoURI;
 
-// const db = 'mongodb://localhost/mern_authenticate_me';
-
-// if (process.env.NODE_ENV == 'production') {
-//   const db = "mongodb://admin:password1@ds153566.mlab.com:53566/heroku_8pq8xsmq";}
-// else {
-//   const db = 'mongodb://localhost/mern_authenticate_me';
-// }
+let db = "mongodb://admin:password1@ds153566.mlab.com:53566/heroku_8pq8xsmq";
+if (process.env.NODE_ENV != 'production') {
+  db = 'mongodb://localhost/mern_authenticate_me';
+}
 
 // Connect to MongoDB
-// mongoose
-//   .connect(
-//     db,
-//     { useNewUrlParser: true }
-//   )
-  
-
-  mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mern_authenticate_me",
-    {
-      useCreateIndex: true,
-      useNewUrlParser: true
-    }
-  );
+mongoose
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err)
+);
 
 // Passport middleware
 app.use(passport.initialize());
@@ -53,15 +45,17 @@ require("./config/passport")(passport);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+} else {
+  app.use(express.static(path.join(__dirname, 'client/public')));
 }
-
-// app.use(express.static(path.join(__dirname, '../public')));
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
-// app.get('*', function (request, response){
-//    response.sendFile(path.resolve(__dirname, '/client/build', 'index.html'));
-// })
+app.get('*', function (request, response){
+   console.log('here');
+   console.log('path: %s', path.join(__dirname, '/client/build', 'index.html'))
+   response.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+})
 // Routes
 app.use("/api/users", users);
 
