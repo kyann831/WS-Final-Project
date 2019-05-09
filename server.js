@@ -59,9 +59,9 @@ if (process.env.NODE_ENV === "production") {
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
-app.get('*', function (request, response){
-   response.sendFile(path.resolve(__dirname, '/client/build', 'index.html'));
-})
+// app.get('*', function (request, response){
+//    response.sendFile(path.resolve(__dirname, '/client/build', 'index.html'));
+// })
 // Routes
 app.use("/api/users", users);
 
