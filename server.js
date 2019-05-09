@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
-const cors = require('cors');
 
 const users = require("./routes/api/users");
 
@@ -17,7 +16,11 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // DB Config
 // const db = require("./config/keys").mongoURI;
@@ -56,7 +59,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
 app.get('*', function (request, response){
-   response.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+   response.sendFile(path.resolve(__dirname, '/client/build', 'index.html'));
 })
 // Routes
 app.use("/api/users", users);
