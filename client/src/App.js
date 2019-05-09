@@ -21,8 +21,6 @@ import Flexibility from "./components/layout/Flexibility";
 import Results from "./components/layout/Results";
 import About from "./components/layout/About";
 
-
-
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 
@@ -66,14 +64,6 @@ class App extends Component {
             <Route exact path="/flexibility" component={Flexibility} />
             <Route exact path="/results" component={Results} />
             <Route exact path="/about" component={About} />
-
-
-
-
-
-
-
-
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
