@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
 
@@ -13,33 +13,31 @@ app.use(cors());
 
 // Bodyparser middleware
 app.use(
-  bodyParser.urlencoded({
-    extended: false
+  express.urlencoded({
+    extended: true
   })
 );
-app.use(bodyParser.json());
+app.use(express.json());
 
 // DB Config
 // const db = require("./config/keys").mongoURI;
 
-const db = 'mongodb://localhost/mern_authenticate_me';
+// const db = 'mongodb://localhost/mern_authenticate_me';
 
 // Connect to MongoDB
-mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
+// mongoose
+//   .connect(
+//     db,
+//     { useNewUrlParser: true }
+//   )
+  
 
-  // mongoose.connect(
-  //   process.env.MONGODB_URI || "mongodb://password1@ds153566.mlab.com:53566/heroku_8pq8xsmq",
-  //   {
-  //     useCreateIndex: true,
-  //     useNewUrlParser: true
-  //   }
-  // );
+  mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mern_authenticate_me",
+    {
+      useCreateIndex: true,
+      useNewUrlParser: true
+    }
+  );
 
 // Passport middleware
 app.use(passport.initialize());
