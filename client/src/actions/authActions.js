@@ -20,7 +20,11 @@ export const registerUser = (userData, history) => dispatch => {
 // Login - get user token
 export const loginUser = userData => dispatch => {
   axios
-    .post("/api/users/login", userData)
+    .post("/api/users/login", JSON.stringify(userData), {
+      headers: {
+          'Content-Type': 'application/json',
+      }
+    })
     .then(res => {
       // Save to localStorage
 
