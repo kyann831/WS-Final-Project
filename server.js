@@ -24,11 +24,11 @@ app.use(express.json());
 
 // const db = 'mongodb://localhost/mern_authenticate_me';
 
-if (process.env.NODE_ENV == 'production') {
-  const db = "mongodb://admin:password1@ds153566.mlab.com:53566/heroku_8pq8xsmq";}
-else {
-  const db = 'mongodb://localhost/mern_authenticate_me';
-}
+// if (process.env.NODE_ENV == 'production') {
+//   const db = "mongodb://admin:password1@ds153566.mlab.com:53566/heroku_8pq8xsmq";}
+// else {
+//   const db = 'mongodb://localhost/mern_authenticate_me';
+// }
 
 // Connect to MongoDB
 // mongoose
@@ -55,7 +55,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(express.static(path.join(__dirname, '../public')));
+// app.use(express.static(path.join(__dirname, '../public')));
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
