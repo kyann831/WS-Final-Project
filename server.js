@@ -8,6 +8,9 @@ const users = require("./routes/api/users");
 
 const app = express();
 
+const cors = require('cors');
+app.use(cors());
+
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -15,12 +18,6 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 // DB Config
 // const db = require("./config/keys").mongoURI;
