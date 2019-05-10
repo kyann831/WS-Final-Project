@@ -56,14 +56,20 @@ class Flexibility extends Component {
               
             </Carousel>
           </div>
-          <div className="Dashboard"><p style={{width: "65%",
-      display: "block",
-      textAlign: "center",
-      // boxSizing: "border-box",
-      // border: "1px solid black",
-      justifyContent: "center",
-      margin: "0 auto", marginBottom: "50", marginTop: "50"}}><h3><Link to="/Dashboard">Dashboard</Link></h3></p></div>          
-
+       
+          <div className="col s6">
+          <Link
+            to="/dashboard"
+            style={{
+              width: "200px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginRight: 20            }}
+            className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
+          >
+            Dashboard
+          </Link>
+          </div>
           </div>
 
         );

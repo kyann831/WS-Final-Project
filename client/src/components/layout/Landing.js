@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import { Card } from "react-materialize";
+
+import { Card, Col, Row } from "react-materialize";
 
 class Landing extends Component {
   render() {
     return (
-      <div className="row">
-    <div className="col s12 m7">
+      <div className="row" >
+    <div className="col s12" >
       <div className="card">
         <div className="card-image"> <img src={this.props.image} alt=""></img></div>
 
@@ -19,16 +20,16 @@ class Landing extends Component {
           <a href={this.props.href}>{this.props.action}</a>
        
   
-      <div style={{ height: "75vh"}} className="container valign-wrapper">
+      <div style={{ height: "65vh", marginTop:40, paddingBottom: 170, paddingLeft: 120}} className="container valign-wrapper">
         <div className="row">
-          <div className="col s12 center-align">
+          <div className="col s12 ">
 
             <h4>
             Take the test. Watch the videos. Track your results. {" "}
               <span style={{ fontFamily: "monospace" }}></span> 
             </h4>
             <p className="flow-text grey-text text-darken-1">
-             Afraid of falling? Try Walk Safe!
+            <center> Afraid of falling? Try Walk Safe!</center>
             </p>
             <br />
             <div className="col s6">
@@ -37,9 +38,10 @@ class Landing extends Component {
                 style={{
                   width: "140px",
                   borderRadius: "3px",
-                  letterSpacing: "1.5px"
+                  letterSpacing: "1.5px",
+                  marginLeft: 100
                 }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3" 
               >
                 Register
               </Link>
@@ -50,9 +52,11 @@ class Landing extends Component {
                 style={{
                   width: "140px",
                   borderRadius: "3px",
-                  letterSpacing: "1.5px"
+                  letterSpacing: "1.5px",
+                  marginRight: 150
+                
                 }}
-                className="btn btn-large btn-flat waves-effect white black-text"
+                className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
               >
                 Log In
               </Link>
@@ -66,10 +70,13 @@ class Landing extends Component {
         </div>
         
       </div>
+    
       
     );
   }
 }
 
 
+
 export default Landing;
+

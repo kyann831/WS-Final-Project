@@ -17,7 +17,7 @@ class DemoCarousel extends Component {
             <Carousel>
               <div>
                 {/* <video src="https://www.youtube.com/embed/YCGPX8URA-Q" style={{ width:"640px",height:"480px" }} controls></video> */}
-                <iframe width="600" height="400" src="https://www.youtube.com/embed/YCGPX8URA-Q" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="video-1"></iframe>
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/YCGPX8URA-Q?rel=0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="video-1"></iframe>
                 <img src="http://i3.ytimg.com/vi/YCGPX8URA-Q/hqdefault.jpg" alt="" />
                 <p className="legend">4 Wheeled Rollator</p>
               </div>

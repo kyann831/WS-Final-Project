@@ -25,7 +25,7 @@ class Navbar extends Component {
               style={{
                 fontFamily: "monospace",
                 paddingLeft: 20,
-                marginLeft: 240
+                marginLeft: 260
 
                 
               }}

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
 
 
 class Card extends Component {
@@ -38,9 +40,20 @@ class Results extends Component {
                     <p>4. Walking in dark or poorly lit areas.</p>
                    <p> 5. Walking when fatigued sick or after having walked a prolonged period of time.</p></h5>} href="/dashboard"/>
             <Card content={<h5><p>7-10</p><p>--------------------------------------------------------------------------------------</p><p>YES. You need a walker for maximum safety when walking and you will benefit from a mobility assessment by a professional. Talk to your doctor and consult a physical therapist specialized in fall prevention.</p></h5>} href="/dashboard" />
-            <Card content={<h5>Return to Dashboard</h5>} action="Dashboard" href="/dashboard" />
+          <Link
+            to="/dashboard"
+            style={{
+              width: "200px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginRight: 20,  
+                  }}
+            className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
+          >
+            Dashboard
+          </Link>
+          </div>
 
-            </div>
         )
 
     }
