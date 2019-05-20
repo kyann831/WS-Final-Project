@@ -154,9 +154,10 @@ class Quiz extends Component {
   function Answer(props) {
     var style = {
       width: "100%",
+      float: "right",
       height: 50,
       color: "blue",
-      backgroundColor: "white"
+      backgroundColor: ""
     }
     return(
       <div>
@@ -179,13 +180,15 @@ class Quiz extends Component {
   
   function QuizArea(props) {
     var style = {
-      width: "75%",
+      width: "60%",
+      float: "right",
       display: "block",
       textAlign: "center",
       boxSizing: "border-box",
       border: "1px solid black",
       justifyContent: "center",
-      margin: "0 auto",
+      // margin: "0 auto",
+      marginRight: 40
     }
             
     return(
@@ -231,18 +234,6 @@ class Quiz extends Component {
     )
   }
   
-//   function TotalIncorrect(props) {
-//     var style = {
-//       display: "inline-block",    
-//       padding: "1em",
-//       background: "#eee",
-//       margin: "0 0 0 1em"
-//     }
-//     return(
-//       <h2 style={style}>{props.incorrect}</h2>
-//     )
-//   }
-  
   function ScoreArea(props) {
     var style = {
       width: "100%",
@@ -254,7 +245,6 @@ class Quiz extends Component {
     return(
       <div style={style} >
         <TotalCorrect correct={props.correct} />
-        {/* <TotalIncorrect incorrect={props.incorrect} /> */}
       </div>
     )
   }
