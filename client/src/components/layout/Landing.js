@@ -1,26 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-import { Card, Col, Row } from "react-materialize";
+// import { Header } from "react";
 
 class Landing extends Component {
   render() {
     return (
-      <div className="row" >
-    <div className="col s12" >
-      <div className="card">
-        <div className="card-image"> <img src={this.props.image} alt=""></img></div>
+    //   <div className="row" >
+    // <div className="col s12" >
+    //   <div className="card">
+    //     <div className="card-image"> <img src={this.props.image} alt=""></img></div>
 
 
-          <span class="card-title"></span>
+    //       <span class="card-title"></span>
         
-        <div class="card-content">{this.props.content}
-        </div>
-        <div class="card-action">
-          <a href={this.props.href}>{this.props.action}</a>
+    //     <div class="card-content">{this.props.content}
+    //     </div>
+    //     <div class="card-action">
+    //       <a href={this.props.href}>{this.props.action}</a>
        
   
-      <div style={{ height: "65vh", marginTop:40, paddingBottom: 170, paddingLeft: 120}} className="container valign-wrapper">
+      <div style={{ height: "65vh", marginTop:120, paddingBottom: 170, paddingLeft: 120, float: "right"}} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 ">
 
@@ -60,16 +59,16 @@ class Landing extends Component {
               >
                 Log In
               </Link>
-              </div>
+          </div>
       </div>
     </div>
-  </div>
+   </div>
   
-            </div>
-          </div>
-        </div>
+            // </div>
+  //         </div>
+  //       </div>
         
-      </div>
+  //     </div>
     
       
     );

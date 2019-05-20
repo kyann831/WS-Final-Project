@@ -8,22 +8,34 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Dropdown, Button} from "react-materialize";
 import React, { Component } from "react";
+import axios from "axios";
 
 class DropContainer extends Component {
-    state = {
-        testscore: "",
-        corefive: "",
-        otherexercise: ""
-      };
+      constructor() {
+        super();
+        axios
+          .post("/api/userdata/get")
+          .then(resp => {
+            this.state = {
+              testscore: resp.data.testscore || '',
+              corefive: resp.data.corefive || '',
+              otherexercise: resp.data.otherexercise || ''
+            }
+          })
+          .catch(err => console.log(err));
+      }
 
+      updateUserdata = () => {
+        axios
+          .post("/api/userdata/update", this.state)
+          .catch(err => console.log(err));
+      }
+    
       handleInputChange = event => {
-        console.log(this.state);
         const { name, text } = event.target;
-        console.log('target: %o', event.target);
-        console.log("name: %s, value: %s", name, text);
         this.setState({
           [name]: text
-        });
+        }, this.updateUserdata);
       };
 
     render() {

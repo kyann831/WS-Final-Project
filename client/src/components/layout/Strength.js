@@ -12,27 +12,16 @@ class Strength extends Component {
           <p style={{width: "65%",
       display: "block",
       textAlign: "center",
-      // boxSizing: "border-box",
-      // border: "1px solid black",
       justifyContent: "center",
-      margin: "0 auto", marginBottom: "20"}}><h5> Did you take the test? Now do the exercises to get stronger and Walk Safe. Try the core 5 and when you're feeling ambitious add in a few more!</h5></p>
-          <div id="carousel-container">
+      float: "right",
+      margin: "0 auto", marginBottom: "20"}}><h5> Did you take the test? Now do the exercises to get stronger and Walk Safe. <br></br> Try the core 5 and when you're feeling ambitious add in a few more!</h5></p>
+          <div id="carousel-container"  style={{float: "right", marginRight: 60}}>
             <Carousel>
               <div>
               <iframe width="600" height="400" src="https://www.youtube.com/embed/dD8T9_M1thk" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="video-1"></iframe>
                 <img src="http://i3.ytimg.com/vi/dD8T9_M1thk/hqdefault.jpg" alt="" />
                 <p className="legend">Abduction Squat on Walker</p>
               </div>
-              {/* <div>
-                <iframe width="600" height="400" src="https://www.youtube.com/embed/Nd8K4MFojos" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="AA Shoulder Flexion"></iframe>
-                <img src="http://i3.ytimg.com/vi/Nd8K4MFojos/hqdefault.jpg" alt="" />
-                <p className="legend">AA Shoulder Flexion</p>
-              </div>
-              <div>
-              <iframe width="600" height="400" src="https://www.youtube.com/embed/ouVKsOmNZW0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="video-1"></iframe>
-                <img src="http://i3.ytimg.com/vi/ouVKsOmNZW0/hqdefault.jpg" alt="" />
-                <p className="legend">Biceps</p>
-              </div> */}
               <div>
               <iframe width="600" height="400" src="https://www.youtube.com/embed/MV6gdcEeVv0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="video-1"></iframe>
                 <img src="http://i3.ytimg.com/vi/MV6gdcEeVv0/hqdefault.jpg" alt="" />
@@ -119,31 +108,23 @@ class Strength extends Component {
                 <p className="legend">Neck Rotation</p>
               </div>
             </Carousel>
-          </div>
-          {/* <div className="Dashboard"><p style={{width: "65%",
-      display: "block",
-      textAlign: "center",
-      // boxSizing: "border-box",
-      // border: "1px solid black",
-      justifyContent: "center",
-      margin: "0 auto", marginBottom: "50", marginTop: "50"}}><h3><Link to="/Dashboard">Dashboard</Link></h3></p></div>          
-
-          </div> */}
-          <div className="col s6">
-          <Link
+            </div>
+            <div className="col s6">
+            <Link
             to="/dashboard"
             style={{
               width: "200px",
               borderRadius: "3px",
               letterSpacing: "1.5px",
-              marginRight: 20            }}
+              marginRight: 20,
+                        }}
             className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
           >
             Dashboard
           </Link>
           </div>
+         
           </div>
-
         );
     }
 }

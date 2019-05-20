@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
+import { Link } from "react-router-dom";
+
  
 class DemoCarousel extends Component {
     render() {
@@ -12,8 +14,9 @@ class DemoCarousel extends Component {
       // boxSizing: "border-box",
       // border: "1px solid black",
       justifyContent: "center",
-      margin: "0 auto", marginBottom: "20"}}><h5> Watch videos to know what devices can help you Walk Safe! Below are videos showing common devices to make walking safe.</h5></p>
-          <div id="carousel-container"  style={{marginTop: 20}}>
+      float: "right",
+      margin: "0 auto", marginBottom: "20"}}><h5> Watch videos to know what devices can help you Walk Safe!<br></br> Below are videos showing common devices to make walking safe.</h5></p>
+          <div id="carousel-container"  style={{float: "right", marginRight: 60, marginTop: 20}}>
             <Carousel>
               <div>
                 {/* <video src="https://www.youtube.com/embed/YCGPX8URA-Q" style={{ width:"640px",height:"480px" }} controls></video> */}
@@ -52,6 +55,19 @@ class DemoCarousel extends Component {
                 <p className="legend">Single Point Cane</p>
               </div>
             </Carousel>
+          </div>
+          <div className="col s6">
+          <Link
+            to="/login"
+            style={{
+              width: "200px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginRight: 20            }}
+            className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
+          >
+            Login
+          </Link>
           </div>
           </div>
 

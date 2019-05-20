@@ -12,11 +12,10 @@ class Flexibility extends Component {
           <p style={{width: "65%",
       display: "block",
       textAlign: "center",
-      // boxSizing: "border-box",
-      // border: "1px solid black",
       justifyContent: "center",
+      float: "right",
       margin: "0 auto", marginBottom: "20"}}><h5> Did you take the test? These flexibility exercises target muscle groups which are commonly tight and impact walking. Add these into your program as tolerated.</h5></p>
-          <div id="carousel-container">
+          <div id="carousel-container" style={{float: "right", marginRight: 60}}>
             <Carousel>
               <div>
               <iframe width="600" height="400" src="https://www.youtube.com/embed/VoIE0dTsb2A" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="video-1"></iframe>
@@ -52,8 +51,7 @@ class Flexibility extends Component {
               <iframe width="600" height="400" src="https://www.youtube.com/embed/9c4Tpq9rwps" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="video-1"></iframe>
                 <img src="http://i3.ytimg.com/vi/9c4Tpq9rwps/hqdefault.jpg" alt="" />
                 <p className="legend">Upper Trapezius Stretch</p>
-              </div>
-              
+              </div>             
             </Carousel>
           </div>
        

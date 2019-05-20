@@ -3,11 +3,15 @@ const Schema = mongoose.Schema;
 
 const UserdataSchema = new Schema({
 
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
    testscore: {
     type: String,
     required: false
     },
-    core5: {
+    corefive: {
       type: String,
       required: false
     },
