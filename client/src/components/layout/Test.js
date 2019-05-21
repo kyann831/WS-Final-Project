@@ -137,6 +137,22 @@ class Quiz extends Component {
             dataSet={this.state.dataSet[this.state.current]}
             finished={this.state.current === 10} 
           />
+          <div className="col s6">
+            <Link
+            to="/dashboard"
+            style={{
+              width: "200px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginLeft: 380,
+              marginTop: 20,
+              marginRight: 40
+                        }}
+            className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
+          >
+            Dashboard
+          </Link>
+          </div>
         </div>
       )
     }
@@ -157,7 +173,7 @@ class Quiz extends Component {
       float: "right",
       height: 50,
       color: "blue",
-      backgroundColor: ""
+      backgroundColor: "white"
     }
     return(
       <div>
@@ -187,7 +203,6 @@ class Quiz extends Component {
       boxSizing: "border-box",
       border: "1px solid black",
       justifyContent: "center",
-      // margin: "0 auto",
       marginRight: 40
     }
             
@@ -247,6 +262,7 @@ class Quiz extends Component {
         <TotalCorrect correct={props.correct} />
       </div>
     )
+    
   }
   
   export default Quiz

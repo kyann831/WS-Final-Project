@@ -30,7 +30,7 @@ class Dashboard extends Component {
             <br></br>
             <Card content="Flexibility Exercises" action="Get Started" href="/flexibility" />
             <Card content="Track your results" action="Tracking" href="/tracking" />
-            <Card content="Home Safety" action="Learn More" href="/safety"/>
+            <Card content="General Safety" action="Learn More" href="/safety"/>
 
           </div>
         </div>

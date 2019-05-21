@@ -9,6 +9,9 @@ import Paper from '@material-ui/core/Paper';
 import { Dropdown, Button} from "react-materialize";
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+
 
 class DropContainer extends Component {
       constructor() {
@@ -40,19 +43,21 @@ class DropContainer extends Component {
 
     render() {
         return(
-            <div><div className="col s4 .left-align"><Drop handleChange={this.handleInputChange} name="testscore" text="Log Test Score" text1="1" text2="2" text3="3" text4="4" text5="5" text6="6" text7="7" text8="8" text9="9" text10="10" /> </div>  
-    <div className="col s4 .center-align"> <Drop handleChange={this.handleInputChange} name="corefive" text="I did the Core 5" text1="Yes" text2="No"  /></div>
-    <div className="col s4 .right-align"> <Drop handleChange={this.handleInputChange} name="otherexercise" text="I did 2 other Exercise" text1="Yes" text2="No"  /></div>
-    </div>
+          <div className="row">
+           <div className="col 4 left align" style={{marginLeft: 450}}><Drop handleChange={this.handleInputChange} name="testscore" text="Log Test Score" text1="1" text2="2" text3="3" text4="4" text5="5" text6="6" text7="7" text8="8" text9="9" text10="10"/></div>
+            <div className="col 4 center align"><Drop handleChange={this.handleInputChange} name="corefive" text="I did the Core 5" text1="Yes" text2="No"/></div>
+            <div className="col 4 right align"><Drop handleChange={this.handleInputChange} name="otherexercise" text="I did 2 other Exercise" text1="Yes" text2="No"  />
+          </div>
+          </div>
         )
     }
 }
 class Drop extends Component {
     render() {
         return(
-<div className="div1" style={{marginTop: "50px", marginBottom: "50px", marginLeft: "120px"}}>
+<div className="div1" style={{marginTop: "75px", marginBottom: "50px", marginLeft: "120px"}}>
 
-<Dropdown trigger={<Button>{this.props.text}</Button>}>
+<Dropdown trigger={<Button style={{background: "#2196F3"}}>{this.props.text}</Button>}>
 <a href={this.props.href} name={this.props.name} onClick={this.props.handleChange}>
 {this.props.text1}
 </a>
@@ -100,12 +105,13 @@ class Drop extends Component {
 
 const styles = theme => ({
   root: {
-    width: '75%',
+    width: '67%',
     // marginTop: theme.spacing.unit * 3,
     overflowX: 'auto',
-    marginLeft: 150,
-    marginTop: 100,
-    marginBottom: 100
+    marginTop: 50,
+    marginBottom: 100,
+    float: "right",
+    marginRight: 10
 
     
   },
@@ -173,12 +179,28 @@ function SimpleTable(props) {
       </Table>
     </Paper>
     </div>
-    </div>
+    <div><Link
+    to="/dashboard"
+    style={{
+      width: "200px",
+      borderRadius: "3px",
+      letterSpacing: "1.5px",
+      marginLeft: 400,  
+      marginRight: 10
+          }}
+    className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
+  >
+    Dashboard
+  </Link></div>
+  </div>
+
   );
 }
 
 SimpleTable.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+
 
 export default withStyles(styles)(SimpleTable);

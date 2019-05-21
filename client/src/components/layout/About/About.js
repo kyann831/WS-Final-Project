@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Card } from "react-materialize";
 import { Row, Col } from "react-materialize";
+import { Link } from "react-router-dom";
 import "./Style.css";
 
 
@@ -40,7 +40,21 @@ What is the core 5? The core 5 exercise program is the key to safe walking that 
 
 </Row>
 </Col>
-</div>
+<div className="col s6">
+            <Link
+            to="/login"
+            style={{
+              width: "200px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginRight: 20,
+                        }}
+            className="btn btn-large waves-effect waves-light hoverable blue accent-3 right" 
+          >
+            Login
+          </Link>
+          </div>
+        </div>
  
    
 )
