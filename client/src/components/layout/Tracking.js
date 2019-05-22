@@ -16,22 +16,20 @@ import { Link } from "react-router-dom";
 class DropContainer extends Component {
       constructor() {
         super();
-        axios
-          .post("/api/userdata/get")
-          .then(resp => {
-            this.state = {
-              testscore: resp.data.testscore || '',
-              corefive: resp.data.corefive || '',
-              otherexercise: resp.data.otherexercise || ''
-            }
-          })
-          .catch(err => console.log(err));
+        this.state = {
+          testscore: '',
+          corefive: '',
+          otherexercise: ''
+        }
       }
 
       updateUserdata = () => {
         axios
           .post("/api/userdata/update", this.state)
           .catch(err => console.log(err));
+        document.getElementsByClassName('wed')[0].innerHTML =this.state.testscore;
+        document.getElementsByClassName('wed')[1].innerHTML =this.state.corefive;
+        document.getElementsByClassName('wed')[2].innerHTML =this.state.otherexercise;
       }
     
       handleInputChange = event => {
@@ -167,7 +165,7 @@ function SimpleTable(props) {
               </TableCell>
               <TableCell align="right">{row.Monday}</TableCell>
               <TableCell align="right">{row.Tuesday}</TableCell>
-              <TableCell align="right">{row.Wednesday}</TableCell>
+              <TableCell align="right" className="wed">{row.Wednesday}</TableCell>
               <TableCell align="right">{row.Thursday}</TableCell>
               <TableCell align="right">{row.Friday}</TableCell>
               <TableCell align="right">{row.Saturday}</TableCell>
