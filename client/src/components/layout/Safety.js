@@ -28,7 +28,7 @@ class Card extends Component {
     <Col m={4} style={{textAlign: "justify"}} >
     <Row>
                 
-                <Card image="/assets/images/elderly-exercise (1).png" content={<p><center>Always Wear Proper Footwear</center><br></br>Wear closed toed, lace up shoes for optimal foot and ankle support. Velcro shoes are acceptable for those who have trouble with laces. This type of footwear also better protects you from cuts and scrapes which can lead infections or wounds that are difficult to heal especially in diabetics. Stay away from flip flops and sandals. Loose footwear makes for tripping and falls.  
+                <Card image="/assets/images/elderly-exercise (1).png" content={<p><center>Always Wear Proper Footwear</center><br></br>Wear closed toed, lace up shoes for optimal foot and ankle support. Velcro shoes are okay for those who have trouble with laces. This type of footwear also better protects you from cuts and scrapes which can lead infections or wounds that are difficult to heal especially in diabetics. Stay away from flip flops and sandals. Loose footwear makes for tripping and falls.  
                 </p>} action="About Us" href="/videolibrary"/>
                 <Card image="/assets/images/senior-couple.jpg" content={<p><center>Remember the Buddy System</center><br></br>Remember the buddy system? It worked in Kindergarten and it still works today! A buddy helps pass the time walking and can provide help if needed. Walk with your buddy during the daytime and be aware of your surroundings. If a friendly pet is coming toward you, you will seem him and be ready. Make sure you and your buddy walk in a safe area. Walk safe!
                 </p>} action="About Us" href="videolibrary"/>
