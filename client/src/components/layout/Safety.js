@@ -6,7 +6,7 @@ class Card extends Component {
     render() {
         return(
         <div className="col l4">
-        <div className="card horizontal">
+        <div className="card">
           <div className="card-stacked">
           <div className="card-image"> <img src={this.props.image} alt=""></img></div>
             <div className="card-content" style={{ padding:'10px', margin: '10px 0' }}> {this.props.content}
@@ -28,11 +28,11 @@ class Card extends Component {
     <Col m={4} style={{textAlign: "justify"}} >
     <Row>
                 
-                <Card image="/assets/images/2-men-with-canes.png" content={<p><center>Always Wear Proper Footwear</center><br></br>Wear closed toed, lace up shoes for optimal foot and ankle support. Velcro shoes are acceptable for those who have trouble with laces. This type of footwear also better protects you from cuts and scrapes which can lead infections or wounds that are difficult to heal especially in diabetics. Stay away from flip flops and sandals. Loose footwear makes for tripping and falls.  
+                <Card image="/assets/images/elderly-exercise (1).png" content={<p><center>Always Wear Proper Footwear</center><br></br>Wear closed toed, lace up shoes for optimal foot and ankle support. Velcro shoes are acceptable for those who have trouble with laces. This type of footwear also better protects you from cuts and scrapes which can lead infections or wounds that are difficult to heal especially in diabetics. Stay away from flip flops and sandals. Loose footwear makes for tripping and falls.  
                 </p>} action="About Us" href="/videolibrary"/>
                 <Card image="/assets/images/senior-couple.jpg" content={<p><center>Remember the Buddy System</center><br></br>Remember the buddy system? It worked in Kindergarten and it still works today! A buddy helps pass the time walking and can provide help if needed. Walk with your buddy during the daytime and be aware of your surroundings. If a friendly pet is coming toward you, you will seem him and be ready. Make sure you and your buddy walk in a safe area. Walk safe!
                 </p>} action="About Us" href="videolibrary"/>
-                <Card image="/assets/images/1-man-with-cane.png" content={<p><center>Use Your Cane or Walker When You Need It</center><br></br>Many devices are available to maximize your stability. You might just need a cane around the house for extra support but you might need a walker if you fatigue easily or your balance is compromised. Take the walk safe test to see what benefits you most. Avoid hanging on to loved ones because then everybody goes down during a fall. Use your device! 
+                <Card image="/assets/images/jousting-on-walker.png" content={<p><center>Use Your Cane or Walker When You Need It</center><br></br>Many devices are available to maximize your stability. You might just need a cane around the house for extra support but you might need a walker if you fatigue easily or your balance is compromised. Take the walk safe test to see what benefits you most. Avoid hanging on to loved ones because then everybody goes down during a fall. Use your device! 
                 </p>} action="About Us" href="/videolibrary"/>
                 
                 
